@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: email-list-app
+    env: docker
+    dockerfilePath: ./Dockerfile
+    repo: https://github.com/tenmay/email-list-app # Thay bằng repo GitHub của mày
+    branch: main
+    plan: free
+    numInstances: 1
+    healthCheckPath: /index.html
+    envVars:
+      - key: JAVA_OPTS
+        value: -Xmx512m
+    startCommand: ""
